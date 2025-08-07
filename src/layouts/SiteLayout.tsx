@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
+import { Mountain } from "lucide-react";
 interface SiteLayoutProps {
   children: ReactNode;
 }
@@ -24,8 +24,9 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-lg font-semibold"
+              className="flex items-center gap-2 text-lg font-semibold"
             >
+              <Mountain className="size-5" aria-hidden />
               Nature's Arsenal
             </motion.span>
           </NavLink>
@@ -44,7 +45,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
 
           <div className="flex items-center gap-2">
             <NavLink to="/catalog">
-              <Button size="sm" variant="default" className="hover-scale">
+              <Button size="sm" variant="tactile" className="hover-scale">
                 Shop Now
               </Button>
             </NavLink>

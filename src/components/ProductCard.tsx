@@ -9,9 +9,12 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <motion.article
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-20%" }}
       whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-      className="group relative overflow-hidden rounded-lg border bg-card p-4 shadow-sm"
+      transition={{ duration: 0.35 }}
+      className="group relative overflow-hidden rounded-lg border bg-card p-4 shadow-sm card-elevated tilt-hover"
     >
       <Link to={`/product/${product.id}`} className="block">
         <div className="aspect-square w-full overflow-hidden rounded-md bg-muted">
