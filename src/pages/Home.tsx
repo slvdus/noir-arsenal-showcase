@@ -16,7 +16,7 @@ const Home = () => {
         title="Nature's Arsenal – Tactical Desert-Noir Firearms"
         description="Explore high-contrast, tactical desert-noir firearms. Rifles, shotguns, and pistols engineered by Nature's Arsenal."
       />
-      <section ref={ref} className="grid gap-10 md:grid-cols-2 md:items-center">
+      <section ref={ref} className="relative grid gap-10 md:grid-cols-2 md:items-center">
         <div>
           <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
             Minimalist precision. Built for the wild.
