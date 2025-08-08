@@ -2,7 +2,8 @@ import { ReactNode } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mountain } from "lucide-react";
+import { Mountain, ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 interface SiteLayoutProps {
   children: ReactNode;
 }
@@ -14,6 +15,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 const SiteLayout = ({ children }: SiteLayoutProps) => {
   const location = useLocation();
+  const { totalItems } = useCart();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -43,13 +45,18 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
             </NavLink>
           </nav>
 
-          <div className="flex items-center gap-2">
-            <NavLink to="/catalog">
-              <Button size="sm" variant="tactile" className="hover-scale">
-                Shop Now
-              </Button>
-            </NavLink>
-          </div>
+<div className="flex items-center gap-2">
+  <NavLink to="/catalog">
+    <Button size="sm" variant="tactile" className="hover-scale">
+      Shop Now
+    </Button>
+  </NavLink>
+  <NavLink to="/cart" aria-label="Cart">
+    <Button size="sm" variant="outline" className="hover-scale">
+      <ShoppingCart className="mr-2 size-4" /> Cart ({totalItems})
+    </Button>
+  </NavLink>
+</div>
         </div>
       </header>
 

@@ -4,10 +4,12 @@ import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { ShoppingCart, Heart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 const Product = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
+  const { addItem } = useCart();
 
   if (!product) {
     return (
@@ -39,12 +41,12 @@ const Product = () => {
   };
 
   const handleAddToCart = () => {
+    addItem({ id: product.id, name: product.name, price: product.price, image: product.image });
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
     });
   };
-
   const handleWishlist = () => {
     toast({
       title: "Saved",
