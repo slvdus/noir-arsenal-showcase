@@ -20,7 +20,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-14 sm:h-16 items-center justify-between">
           <NavLink to="/" className="flex items-center gap-2">
             <motion.span
               initial={{ opacity: 0, y: -6 }}
@@ -33,7 +33,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
             </motion.span>
           </NavLink>
 
-          <nav className="flex items-center gap-1">
+          <nav className="hidden items-center gap-1 md:flex">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
@@ -69,7 +69,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 12 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="container py-10"
+        className="container py-8 sm:py-10"
       >
         {children}
       </motion.main>

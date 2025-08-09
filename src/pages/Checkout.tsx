@@ -88,7 +88,7 @@ const Checkout = () => {
       <SEO title="Checkout – Nature's Arsenal" description="Secure your in-store pickup order at Nature's Arsenal." />
 
       <header className="mb-2">
-        <h1 className="text-3xl font-bold">Checkout</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
         <p className="mt-2 text-muted-foreground">In-store pickup only. We'll email you when it's ready.</p>
       </header>
 

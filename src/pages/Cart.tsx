@@ -18,7 +18,7 @@ const Cart = () => {
 
       <header className="flex items-end justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-bold">Your Cart</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold">Your Cart</h1>
           <p className="mt-2 text-muted-foreground">{totalItems} item{totalItems !== 1 && "s"} in cart</p>
         </div>
         {items.length > 0 && (
@@ -41,7 +41,7 @@ const Cart = () => {
             <Card className="md:col-span-2">
               <CardContent className="divide-y p-0">
                 {items.map((item) => (
-                  <div key={item.id} className="flex items-center gap-4 p-4">
+                  <div key={item.id} className="flex flex-col items-start gap-4 p-4 sm:flex-row sm:items-center">
                     <img src={"/placeholder.svg"} alt={`${item.name} product image - Nature's Arsenal`} className="h-16 w-16 rounded-md border object-cover" />
                     <div className="flex-1">
                       <p className="font-medium">{item.name}</p>

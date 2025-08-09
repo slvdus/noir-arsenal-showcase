@@ -86,7 +86,7 @@ const Product = () => {
 
         <div>
           <div className="animate-fade-in">
-            <h1 className="text-3xl font-bold">{product.name}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold">{product.name}</h1>
             <div className="mt-2 flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-1 text-primary">
                 {Array.from({ length: 5 }).map((_, i) => (

@@ -28,7 +28,7 @@ const Catalog = () => {
 
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Product Catalog</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold">Product Catalog</h1>
           <p className="mt-2 text-muted-foreground">Explore our curated selection engineered for precision.</p>
         </div>
         <p className="text-sm text-muted-foreground">{filtered.length} result{filtered.length !== 1 && "s"}</p>

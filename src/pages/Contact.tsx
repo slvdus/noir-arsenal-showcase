@@ -44,7 +44,7 @@ const Contact = () => {
       </Helmet>
 
       <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold">Contact us</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold">Contact us</h1>
         <p className="mt-3 text-muted-foreground">Have a question about fit, compliance, or availability? We\'re here to help.</p>
       </header>
 
