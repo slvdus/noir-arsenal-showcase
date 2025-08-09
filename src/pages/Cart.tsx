@@ -11,6 +11,7 @@ import { Trash2 } from "lucide-react";
 const Cart = () => {
   const { items, subtotal, totalItems, updateQuantity, removeItem } = useCart();
   const navigate = useNavigate();
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
 
   return (
     <>
@@ -42,7 +43,7 @@ const Cart = () => {
               <CardContent className="divide-y p-0">
                 {items.map((item) => (
                   <div key={item.id} className="flex flex-col items-start gap-4 p-4 sm:flex-row sm:items-center">
-                    <img src={"/placeholder.svg"} alt={`${item.name} product image - Nature's Arsenal`} className="h-16 w-16 rounded-md border object-cover" />
+                    <img src={placeholder} alt={`${item.name} product image - Nature's Arsenal`} className="h-16 w-16 rounded-md border object-cover" />
                     <div className="flex-1">
                       <p className="font-medium">{item.name}</p>
                       <p className="text-sm text-muted-foreground">${item.price.toFixed(2)}</p>

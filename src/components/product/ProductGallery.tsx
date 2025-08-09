@@ -7,7 +7,7 @@ interface ProductGalleryProps {
 }
 
 const ProductGallery = ({ images, alt }: ProductGalleryProps) => {
-  const gallery = images && images.length > 0 ? images : ["/placeholder.svg"]; // safety fallback
+  const gallery = images && images.length > 0 ? images : [import.meta.env.BASE_URL + 'placeholder.svg']; // safety fallback
 
   return (
     <section aria-label="Product media" className="group relative animate-fade-in">
@@ -17,7 +17,7 @@ const ProductGallery = ({ images, alt }: ProductGalleryProps) => {
             <CarouselItem key={idx} className="md:basis-full">
               <AspectRatio ratio={1}>
                 <img
-                  src={src}
+                  src={src.startsWith('http') ? src : (import.meta.env.BASE_URL + src.replace(/^\//, ''))}
                   alt={alt}
                   loading="lazy"
                   className="h-full w-full rounded-xl border bg-muted object-cover transition-transform duration-300 group-hover:scale-[1.01]"

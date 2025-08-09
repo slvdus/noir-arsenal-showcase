@@ -16,6 +16,7 @@ const Home = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   const featured = products.slice(0, 4);
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -72,7 +73,7 @@ const Home = () => {
           <motion.div style={{ y }} className="relative">
             <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted tilt-hover card-elevated">
               <img
-                src="/placeholder.svg"
+                src={placeholder}
                 alt="Product lifestyle placeholder"
                 className="h-full w-full object-cover"
                 loading="lazy"

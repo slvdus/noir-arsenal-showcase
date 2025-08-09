@@ -10,6 +10,7 @@ interface CrossSellProps {
 const CrossSell = ({ excludeIds }: CrossSellProps) => {
   const { addItem } = useCart();
   const candidates = products.filter((p) => !excludeIds.includes(p.id)).slice(0, 8);
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
   if (candidates.length === 0) return null;
 
   return (
@@ -24,7 +25,7 @@ const CrossSell = ({ excludeIds }: CrossSellProps) => {
             <CarouselItem key={p.id} className="basis-3/4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
               <div className="h-full rounded-lg border p-4 card-elevated">
                 <div className="aspect-square w-full overflow-hidden rounded-md bg-muted">
-                  <img src="/placeholder.svg" alt={`${p.name} placeholder`} className="h-full w-full object-cover" loading="lazy" />
+                  <img src={placeholder} alt={`${p.name} placeholder`} className="h-full w-full object-cover" loading="lazy" />
                 </div>
                 <div className="mt-3 flex items-start justify-between gap-2">
                   <div>
@@ -35,7 +36,7 @@ const CrossSell = ({ excludeIds }: CrossSellProps) => {
                 <Button
                   className="mt-3 w-full"
                   variant="outline"
-                  onClick={() => addItem({ id: p.id, name: p.name, price: p.price, image: "/placeholder.svg" })}
+                  onClick={() => addItem({ id: p.id, name: p.name, price: p.price, image: placeholder })}
                 >
                   Add
                 </Button>

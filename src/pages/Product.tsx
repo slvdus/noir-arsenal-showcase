@@ -28,11 +28,14 @@ const Product = () => {
     );
   }
 
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
+  const imageUrl = typeof window !== "undefined" ? new URL(placeholder, window.location.origin).toString() : placeholder;
+
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: ["/placeholder.svg"],
+    image: [imageUrl],
     description: product.description,
     sku: product.sku,
     category: product.category,
@@ -82,7 +85,7 @@ const Product = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <article className="grid gap-10 md:grid-cols-2 md:items-start">
-        <ProductGallery images={["/placeholder.svg"]} alt={`${product.name} product image - Nature's Arsenal`} />
+        <ProductGallery images={[placeholder]} alt={`${product.name} product image - Nature's Arsenal`} />
 
         <div>
           <div className="animate-fade-in">

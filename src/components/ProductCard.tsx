@@ -7,6 +7,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
   return (
     <motion.article
       initial={{ opacity: 0, y: 12 }}
@@ -19,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <Link to={`/product/${product.id}`} className="block">
         <div className="aspect-square w-full overflow-hidden rounded-md bg-muted">
           <img
-            src={"/placeholder.svg"}
+            src={placeholder}
             alt={`${product.name} product image - Nature's Arsenal`}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"

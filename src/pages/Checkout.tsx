@@ -14,6 +14,7 @@ import { products } from "@/data/products";
 const Checkout = () => {
   const { items, subtotal, clear, addItem } = useCart();
   const navigate = useNavigate();
+  const placeholder = import.meta.env.BASE_URL + 'placeholder.svg';
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -182,7 +183,7 @@ const Checkout = () => {
                 <p className="truncate text-sm font-medium">{p.name}</p>
                 <p className="text-xs text-muted-foreground tabular-nums">${p.price.toFixed(2)}</p>
               </div>
-              <Button size="sm" variant="outline" onClick={() => addItem({ id: p.id, name: p.name, price: p.price, image: "/placeholder.svg" })}>Add</Button>
+              <Button size="sm" variant="outline" onClick={() => addItem({ id: p.id, name: p.name, price: p.price, image: placeholder })}>Add</Button>
             </div>
           ))}
         </div>
