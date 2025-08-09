@@ -7,7 +7,7 @@ interface ProductGalleryProps {
 }
 
 const ProductGallery = ({ images, alt }: ProductGalleryProps) => {
-  const gallery = images && images.length > 0 ? images : ["/public/placeholder.svg"]; // safety fallback
+  const gallery = images && images.length > 0 ? images : ["/placeholder.svg"]; // safety fallback
 
   return (
     <section aria-label="Product media" className="group relative animate-fade-in">

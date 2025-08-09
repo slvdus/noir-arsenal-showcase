@@ -6,7 +6,7 @@ import { Target, Shield, Compass, Truck, Wrench, CheckCircle2 } from "lucide-rea
 import { useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import heroImg from "@/assets/products/gforce-lever-rifle.jpg";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Helmet } from "react-helmet-async";
 
@@ -39,41 +39,54 @@ const Home = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <section ref={ref} className="relative grid gap-10 md:grid-cols-2 md:items-center">
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-            Minimalist precision. Built for the wild.
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            High-contrast engineering meets field-tested reliability. Discover the collection from Nature's Arsenal.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Link to="/catalog">
-              <Button size="lg" variant="tactile" className="hover-scale">Browse Catalog</Button>
-            </Link>
-            <Link to="/about">
-              <Button size="lg" variant="outline">About Us</Button>
-            </Link>
+      <section ref={ref} className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/10 via-transparent to-transparent p-6 sm:p-10">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs font-medium">
+              <Shield className="size-3.5" /> Trusted, field‑tested builds
+            </span>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Modern defense. Minimalist design.
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Purpose‑built platforms engineered for reliability in real‑world conditions.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/catalog">
+                <Button size="lg" variant="tactile" className="hover-scale">Shop the catalog</Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline">Learn more</Button>
+              </Link>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {[{ title: 'Fast, insured shipping', Icon: Truck }, { title: '2‑year workmanship support', Icon: Wrench }].map(({ title, Icon }) => (
+                <div key={title} className="flex items-center gap-2 rounded-lg border bg-card p-3">
+                  <Icon className="size-4 text-primary" />
+                  <p className="text-sm">{title}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[{ title: 'Duty‑grade reliability', Icon: Shield }, { title: 'Field‑tested designs', Icon: Target }, { title: 'Ergonomic control', Icon: Compass }, { title: 'Hassle‑free support', Icon: Wrench }].map(({ title, Icon }) => (
-              <div key={title} className="rounded-lg border p-4 card-elevated">
-                <Icon className="size-5 mb-2" aria-hidden />
-                <p className="text-sm font-medium">{title}</p>
-              </div>
-            ))}
-          </div>
+
+          <motion.div style={{ y }} className="relative">
+            <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted tilt-hover card-elevated">
+              <img
+                src="/placeholder.svg"
+                alt="Product lifestyle placeholder"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="pointer-events-none absolute inset-x-6 -bottom-4 hidden select-none gap-3 sm:flex">
+              {["4.8★ average", "Secure checkout", "Easy returns"].map((t) => (
+                <span key={t} className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs shadow-sm">
+                  <CheckCircle2 className="size-3.5 text-primary" /> {t}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
-        <motion.div style={{ y }} className="relative">
-          <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted tilt-hover card-elevated">
-            <img
-              src={heroImg}
-              alt="Modern lever-action rifle with tactical M-LOK handguard"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </motion.div>
       </section>
 
       <section className="mt-16">

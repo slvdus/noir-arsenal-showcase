@@ -32,7 +32,7 @@ const Product = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: [product.image],
+    image: ["/placeholder.svg"],
     description: product.description,
     sku: product.sku,
     category: product.category,
@@ -82,7 +82,7 @@ const Product = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <article className="grid gap-10 md:grid-cols-2 md:items-start">
-        <ProductGallery images={[product.image]} alt={`${product.name} product image - Nature's Arsenal`} />
+        <ProductGallery images={["/placeholder.svg"]} alt={`${product.name} product image - Nature's Arsenal`} />
 
         <div>
           <div className="animate-fade-in">
