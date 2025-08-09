@@ -43,6 +43,9 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
             <NavLink to="/about" className={navLinkClass}>
               About
             </NavLink>
+            <NavLink to="/contact" className={navLinkClass}>
+              Contact
+            </NavLink>
           </nav>
 
 <div className="flex items-center gap-2">
@@ -75,8 +78,9 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Nature's Arsenal. All rights reserved.</p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <a href="/about" className="hover:underline">About</a>
-            <a href="/catalog" className="hover:underline">Catalog</a>
+            <NavLink to="/about" className="hover:underline">About</NavLink>
+            <NavLink to="/catalog" className="hover:underline">Catalog</NavLink>
+            <NavLink to="/contact" className="hover:underline">Contact</NavLink>
           </div>
         </div>
       </footer>
