@@ -33,8 +33,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Nature's Arsenal – Tactical Desert‑Noir Firearms"
-        description="Explore high-contrast, tactical desert‑noir firearms. Rifles, shotguns, and pistols engineered by Nature's Arsenal."
+        title="Nature's Arsenal – Veteran‑Owned FFL & Bulk Ammo"
+        description="Local FFL dealer and bulk ammo distributor in Hastings, MI. Veteran‑owned, personalized service, and compliant transfers."
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -44,13 +44,13 @@ const Home = () => {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs font-medium">
-              <Shield className="size-3.5" /> Trusted, field‑tested builds
+              <Shield className="size-3.5" /> Veteran‑owned FFL • Hastings, MI
             </span>
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Modern defense. Minimalist design.
+              Local FFL. Bulk ammo. Veteran precision.
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Purpose‑built platforms engineered for reliability in real‑world conditions.
+              Personalized transfers, bulk ammunition (cases to pallets), and straight‑talk service for Hastings, Wayland, and Middleville.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/catalog">
@@ -61,7 +61,7 @@ const Home = () => {
               </Link>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {[{ title: 'Fast, insured shipping', Icon: Truck }, { title: '2‑year workmanship support', Icon: Wrench }].map(({ title, Icon }) => (
+              {[{ title: 'Bulk ammo pricing (cases & pallets)', Icon: Truck }, { title: 'By‑appointment FFL transfers', Icon: Wrench }].map(({ title, Icon }) => (
                 <div key={title} className="flex items-center gap-2 rounded-lg border bg-card p-3">
                   <Icon className="size-4 text-primary" />
                   <p className="text-sm">{title}</p>
@@ -74,13 +74,13 @@ const Home = () => {
             <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted tilt-hover card-elevated">
               <img
                 src={placeholder}
-                alt="Product lifestyle placeholder"
+                alt="Veteran‑owned FFL and bulk ammo in Hastings, MI"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
             </div>
             <div className="pointer-events-none absolute inset-x-6 -bottom-4 hidden select-none gap-3 sm:flex">
-              {["4.8★ average", "Secure checkout", "Easy returns"].map((t) => (
+              {["Veteran‑owned", "Easy FFL transfers", "Bulk ammo deals"].map((t) => (
                 <span key={t} className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs shadow-sm">
                   <CheckCircle2 className="size-3.5 text-primary" /> {t}
                 </span>
@@ -108,7 +108,7 @@ const Home = () => {
       </section>
 
       <section className="mt-16 grid gap-6 md:grid-cols-3">
-        {[{ title: 'Fast, insured shipping', copy: 'Nationwide delivery with tracking and protective packaging.', Icon: Truck }, { title: '2‑year workmanship warranty', copy: 'Our commitment to reliability and support.', Icon: CheckCircle2 }, { title: 'Armorer‑level QA', copy: 'Each item is inspected and verified before sale.', Icon: Wrench }].map(({ title, copy, Icon }) => (
+        {[{ title: 'Bulk ammo distribution', copy: 'From cases to pallets with straightforward pricing.', Icon: Truck }, { title: 'FFL transfers, simplified', copy: 'Clear guidance, compliant paperwork, fast turnaround.', Icon: CheckCircle2 }, { title: 'Veteran technical expertise', copy: 'Attention to detail from a biomedical equipment tech.', Icon: Wrench }].map(({ title, copy, Icon }) => (
           <motion.div key={title} whileHover={{ y: -3 }} className="rounded-lg border p-6 card-elevated">
             <Icon className="size-5 mb-2" aria-hidden />
             <h3 className="text-xl font-semibold">{title}</h3>
@@ -138,12 +138,18 @@ const Home = () => {
               Yes. Manufacturer warranties apply, and we provide workmanship support for two years on qualifying builds.
             </AccordionContent>
           </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger>Where are you located?</AccordionTrigger>
+            <AccordionContent>
+              124 Ashlynn Dr, Hastings, MI 49058. Serving Hastings, Wayland, and Middleville. Call 269‑804‑2118 or email NaturesArsenalFFL@gmail.com. By appointment.
+            </AccordionContent>
+          </AccordionItem>
         </Accordion>
       </section>
 
       <section className="mt-16 overflow-hidden rounded-xl border bg-muted p-8 text-center card-elevated">
         <h2 className="text-2xl font-semibold">Ready to gear up?</h2>
-        <p className="mt-2 text-sm text-muted-foreground">Explore the full collection or reach out for tailored recommendations.</p>
+        <p className="mt-2 text-sm text-muted-foreground">Shop now or reach out to schedule a transfer or bulk ammo order.</p>
         <div className="mt-4 flex items-center justify-center gap-3">
           <Link to="/catalog">
             <Button size="lg" variant="tactile" className="hover-scale">Shop the catalog</Button>

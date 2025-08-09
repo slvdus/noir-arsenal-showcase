@@ -27,6 +27,17 @@ const Contact = () => {
     '@type': 'ContactPage',
     name: 'Contact Nature\'s Arsenal',
     url: typeof window !== 'undefined' ? `${window.location.origin}/contact` : '',
+    telephone: '269-804-2118',
+    email: 'NaturesArsenalFFL@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '124 Ashlynn Dr',
+      addressLocality: 'Hastings',
+      addressRegion: 'MI',
+      postalCode: '49058',
+      addressCountry: 'US'
+    },
+    areaServed: ['Hastings MI','Wayland MI','Middleville MI']
   };
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -38,14 +49,14 @@ const Contact = () => {
 
   return (
     <>
-      <SEO title="Contact Nature's Arsenal" description="Questions or recommendations? Reach out to Nature\'s Arsenal." />
+      <SEO title="Contact Nature's Arsenal – Hastings, MI FFL & Bulk Ammo" description="By‑appointment transfers and bulk ammo orders. Reach us at 269‑804‑2118 or NaturesArsenalFFL@gmail.com." />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <header className="max-w-2xl">
-        <h1 className="text-3xl sm:text-4xl font-bold">Contact us</h1>
-        <p className="mt-3 text-muted-foreground">Have a question about fit, compliance, or availability? We\'re here to help.</p>
+        <h1 className="text-3xl sm:text-4xl font-bold">Contact us — Hastings, MI</h1>
+        <p className="mt-3 text-muted-foreground">By‑appointment FFL transfers, bulk ammo (cases to pallets), and quick responses. We\'re here to help.</p>
       </header>
 
       <section className="mt-8 grid gap-8 md:grid-cols-2">
@@ -104,8 +115,11 @@ const Contact = () => {
         <aside className="rounded-xl border p-6 bg-muted card-elevated">
           <h2 className="text-xl font-semibold">Other ways to reach us</h2>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li><span className="font-medium text-foreground">Email:</span> support@naturesarsenal.example</li>
-            <li><span className="font-medium text-foreground">Hours:</span> Mon–Fri, 9am–5pm (MT)</li>
+            <li><span className="font-medium text-foreground">Email:</span> NaturesArsenalFFL@gmail.com</li>
+            <li><span className="font-medium text-foreground">Phone:</span> 269‑804‑2118</li>
+            <li><span className="font-medium text-foreground">Address:</span> 124 Ashlynn Dr, Hastings, MI 49058</li>
+            <li><span className="font-medium text-foreground">Service area:</span> Hastings, Wayland, Middleville</li>
+            <li><span className="font-medium text-foreground">Hours:</span> By appointment (flexible)</li>
           </ul>
           <div className="mt-6 rounded-lg border bg-background p-4">
             <p className="text-sm">We comply with all laws and regulations. Availability varies by jurisdiction.</p>
