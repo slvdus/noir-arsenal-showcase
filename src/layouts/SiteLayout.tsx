@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mountain, ShoppingCart } from "lucide-react";
+import { Mountain, ShoppingCart, Mail, Phone, Linkedin, Facebook, Twitter, Globe } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 interface SiteLayoutProps {
   children: ReactNode;
@@ -77,10 +77,35 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
       <footer className="border-t">
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Nature's Arsenal. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <NavLink to="/about" className="hover:underline">About</NavLink>
-            <NavLink to="/catalog" className="hover:underline">Catalog</NavLink>
-            <NavLink to="/contact" className="hover:underline">Contact</NavLink>
+          <div className="flex flex-col items-center gap-2 md:items-end">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <NavLink to="/about" className="hover:underline">About</NavLink>
+              <NavLink to="/catalog" className="hover:underline">Catalog</NavLink>
+              <NavLink to="/contact" className="hover:underline">Contact</NavLink>
+            </div>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <a href="mailto:contact@slvd.us" aria-label="Email" className="hover:text-foreground" rel="noopener noreferrer">
+                <Mail className="size-4" />
+              </a>
+              <a href="tel:+17373986727" aria-label="Phone" className="hover:text-foreground" rel="noopener noreferrer">
+                <Phone className="size-4" />
+              </a>
+              <a href="https://www.linkedin.com/in/mister-s/" target="_blank" aria-label="LinkedIn" className="hover:text-foreground" rel="noopener noreferrer">
+                <Linkedin className="size-4" />
+              </a>
+              <a href="https://www.facebook.com/StalderMael" target="_blank" aria-label="Facebook" className="hover:text-foreground" rel="noopener noreferrer">
+                <Facebook className="size-4" />
+              </a>
+              <a href="https://x.com/MisterSolved" target="_blank" aria-label="Twitter / X" className="hover:text-foreground" rel="noopener noreferrer">
+                <Twitter className="size-4" />
+              </a>
+              <a href="https://truthsocial.com/@SolvedGroup" target="_blank" aria-label="Truth Social" className="hover:text-foreground" rel="noopener noreferrer">
+                <Globe className="size-4" />
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              <span className="text-shimmer">made by Mister S. - Solved Group</span>
+            </p>
           </div>
         </div>
       </footer>

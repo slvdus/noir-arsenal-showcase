@@ -115,3 +115,19 @@ All colors MUST be HSL.
     @apply shadow-sm ring-1 ring-border;
   }
 }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@layer utilities {
+  .text-shimmer {
+    background-image: linear-gradient(90deg, hsl(var(--foreground)/0.5), hsl(var(--primary)), hsl(var(--foreground)/0.5));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+}
